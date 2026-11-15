@@ -190,7 +190,7 @@
         </div>
     </section>
 
-    <!-- Sistema de Agendamiento Online (Directo y Seguro vía WhatsApp / Sincronizado) -->
+    <!-- Sistema de Agendamiento Online -->
     <section id="agenda" class="py-20 bg-[#101018] border-t border-white/10">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10">
@@ -365,7 +365,6 @@
             
             grid.innerHTML = "";
 
-            // Obtener reservas guardadas localmente para esta fecha
             const reservasLocal = JSON.parse(localStorage.getItem('r19_citas') || '{}');
             const ocupadasEseDia = reservasLocal[fechaElegida] || [];
 
@@ -425,7 +424,6 @@
             const servicio = document.getElementById('servicioSelect').value;
             const detalle = document.getElementById('clienteDetalle').value.trim();
 
-            // Guardar en almacenamiento local para bloquear el horario en la web
             let reservasLocal = JSON.parse(localStorage.getItem('r19_citas') || '{}');
             if (!reservasLocal[fecha]) {
                 reservasLocal[fecha] = [];
@@ -435,7 +433,6 @@
                 localStorage.setItem('r19_citas', JSON.stringify(reservasLocal));
             }
 
-            // Armar mensaje directo a WhatsApp del taller
             let msg = `Hola *R19 Mecánica Automotriz*, deseo confirmar mi reserva:%0A%0A`;
             msg += `*Fecha:* ${fecha}%0A`;
             msg += `*Hora:* ${hora} hrs%0A`;
