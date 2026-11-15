@@ -214,7 +214,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-8 text-center md:text-left">
                 <div class="space-y-2 text-sm text-slate-300">
-                    <p class="flex items-center justify-center md:justify-start gap-3"><i class="fa-solid fa-phone text-amber-400"></i> +56 9 1234 5678</p>
+                    <p class="flex items-center justify-center md:justify-start gap-3"><i class="fa-solid fa-phone text-amber-400"></i> +56932291414</p>
                     <p class="flex items-center justify-center md:justify-start gap-3"><i class="fa-solid fa-envelope text-amber-400"></i> contacto@r19mecanica.cl</p>
                     <p class="flex items-center justify-center md:justify-start gap-3"><i class="fa-solid fa-location-dot text-amber-400"></i> Santiago, Chile</p>
                 </div>
@@ -277,7 +277,7 @@
 
     <script>
         const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzq9tEOenVdEuZESIqKNA1Wa648Iul0oBvBRPdxnwYIZY6hJNFr5nnJhrh85vtiu0QBuA/exec"; 
-        const WHATSAPP_TALLER = "56912345678";
+        const WHATSAPP_TALLER = "56932291414"; // Número de pruebas configurado
         const CLAVE_MECANICO = "R19admin";
         const BLOQUES_HORARIOS = ["09:00", "10:30", "12:00", "14:30", "16:00", "17:30"];
 
@@ -391,7 +391,7 @@
                 msg += `*Servicio:* ${servicio}%0A`;
                 if (detalle) msg += `*Detalle:* ${detalle}%0A`;
 
-                alert("¡Reserva guardada con éxito en la planilla del taller! Se abrirá WhatsApp para enviar tu comprobante.");
+                alert("¡Reserva guardada con éxito! Se abrirá WhatsApp para enviar tu comprobante.");
                 window.open(`https://wa.me/${WHATSAPP_TALLER}?text=${msg}`, '_blank');
 
                 form.reset();
@@ -399,7 +399,6 @@
                 document.getElementById('resumenSeleccion').classList.add('hidden');
                 inputFecha.value = hoyISO;
                 
-                // Recargar planilla e interfaz tras 2 segundos para marcar la hora en rojo
                 setTimeout(cargarReservas, 2000);
             }, 600);
         });
