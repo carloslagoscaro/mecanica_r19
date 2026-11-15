@@ -27,6 +27,7 @@
                 </a>
                 <nav class="hidden md:flex items-center space-x-2 text-sm font-medium">
                     <a href="#inicio" class="px-4 py-1.5 rounded-full border border-purple-500 bg-purple-500/10 text-white transition">Inicio</a>
+                    <a href="#nosotros" class="px-4 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition">Nosotros</a>
                     <a href="#servicios" class="px-4 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition">Servicios</a>
                     <a href="#agenda" class="px-4 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition">Agendar Hora</a>
                     <a href="#testimonios" class="px-4 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition">Opiniones</a>
@@ -56,6 +57,22 @@
         </div>
     </section>
 
+    <!-- Sección Leyenda del Mecánico / Sobre Nosotros -->
+    <section id="nosotros" class="py-16 bg-[#101018] border-y border-white/10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Nuestra Filosofía de Trabajo</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 mb-6">Compromiso, Cercanía y 100% Transparencia</h2>
+            <div class="r19-gradient-border p-8 sm:p-10 text-left relative overflow-hidden">
+                <div class="absolute -right-10 -bottom-10 text-white/5 text-9xl pointer-events-none">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <p class="text-slate-200 text-base sm:text-lg leading-relaxed relative z-10 font-medium">
+                    "Mecánica automotriz R19 es un taller pequeño pero con la mejor disponibilidad para poder ayudarlo con los problemas que se presenten en sus vehículos <strong class="text-amber-400">100% transparente</strong>. En R19 nos dedicamos al servicio multimarcas: mantenimiento preventivo y correctivo, suspensión delantera y trasera, frenos, scanner, diagnóstico, inspección pre-compra, inspecciones generales y servicios a domicilio. Acá podrás encontrar un servicio totalmente profesional y de calidad."
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Sección Nuestros Servicios -->
     <section id="servicios" class="py-20 bg-[#0b0b10]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,37 +81,45 @@
                 <p class="text-slate-400 text-sm sm:text-base mt-2">Selecciona el servicio que necesitas para agendar directamente tu bloque de atención.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div onclick="elegirYAgendar('Mantenciones')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/60 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
+                <!-- Servicio 1 -->
+                <div onclick="elegirYAgendar('Mantenimiento Preventivo y Correctivo')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/60 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
                     <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-oil-can text-3xl r19-icon-gradient"></i></div>
-                    <div><h3 class="text-lg font-bold text-white mb-2">Mantenciones</h3><p class="text-slate-400 text-xs leading-relaxed">Cambio de aceite, filtros, revisión de frenos, niveles y pautas por kilometraje.</p></div>
+                    <div><h3 class="text-lg font-bold text-white mb-2">Mantenciones / Preventivo</h3><p class="text-slate-400 text-xs leading-relaxed">Mantenimiento preventivo y correctivo, cambio de aceite, filtros y pautas por kilometraje.</p></div>
                 </div>
-                <div onclick="elegirYAgendar('Culata')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/60 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
-                    <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-gears text-3xl r19-icon-gradient"></i></div>
-                    <div><h3 class="text-lg font-bold text-white mb-2">Culata</h3><p class="text-slate-400 text-xs leading-relaxed">Reparación de culatas, cambio de empaquetaduras, válvulas y control térmico.</p></div>
+                <!-- Servicio 2 -->
+                <div onclick="elegirYAgendar('Suspensión Delantera y Trasera')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/60 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
+                    <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-car-burst text-3xl r19-icon-gradient"></i></div>
+                    <div><h3 class="text-lg font-bold text-white mb-2">Suspensión</h3><p class="text-slate-400 text-xs leading-relaxed">Reparación y revisión completa de suspensión delantera y trasera.</p></div>
                 </div>
-                <div onclick="elegirYAgendar('Embrague')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/60 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
-                    <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-compact-disc text-3xl r19-icon-gradient"></i></div>
-                    <div><h3 class="text-lg font-bold text-white mb-2">Embrague</h3><p class="text-slate-400 text-xs leading-relaxed">Reemplazo de kit de embrague completo, prensa, disco, rodamiento y purga.</p></div>
+                <!-- Servicio 3 -->
+                <div onclick="elegirYAgendar('Frenos')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/60 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
+                    <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-circle-dot text-3xl r19-icon-gradient"></i></div>
+                    <div><h3 class="text-lg font-bold text-white mb-2">Frenos</h3><p class="text-slate-400 text-xs leading-relaxed">Cambio de pastillas, discos, liquido de frenos y revisión de seguridad.</p></div>
                 </div>
-                <div onclick="elegirYAgendar('Distribución')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/60 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
-                    <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-link text-3xl r19-icon-gradient"></i></div>
-                    <div><h3 class="text-lg font-bold text-white mb-2">Distribución</h3><p class="text-slate-400 text-xs leading-relaxed">Cambio de correa o cadena de distribución, tensores, rodillos y bomba de agua.</p></div>
-                </div>
-                <div onclick="elegirYAgendar('Scanner Automotriz')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/60 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
+                <!-- Servicio 4 -->
+                <div onclick="elegirYAgendar('Scanner y Diagnóstico')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/60 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
                     <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-laptop-medical text-3xl r19-icon-gradient"></i></div>
-                    <div><h3 class="text-lg font-bold text-white mb-2">Scanner Automotriz</h3><p class="text-slate-400 text-xs leading-relaxed">Diagnóstico electrónico multimarca, lectura de fallas Check Engine, ABS y sensores.</p></div>
+                    <div><h3 class="text-lg font-bold text-white mb-2">Scanner y Diagnóstico</h3><p class="text-slate-400 text-xs leading-relaxed">Diagnóstico electrónico multimarcas avanzado para detección precisa de fallas.</p></div>
                 </div>
-                <div onclick="elegirYAgendar('Regeneración DPF')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/60 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
-                    <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-smog text-3xl r19-icon-gradient"></i></div>
-                    <div><h3 class="text-lg font-bold text-white mb-2">Regeneración DPF</h3><p class="text-slate-400 text-xs leading-relaxed">Regeneración forzada y limpieza de filtro de partículas diésel para recuperar potencia.</p></div>
+                <!-- Servicio 5 -->
+                <div onclick="elegirYAgendar('Inspección Pre-compra e Inspecciones Generales')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/60 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
+                    <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-clipboard-check text-3xl r19-icon-gradient"></i></div>
+                    <div><h3 class="text-lg font-bold text-white mb-2">Inspección Pre-compra</h3><p class="text-slate-400 text-xs leading-relaxed">Inspección pre-compra e inspecciones generales detalladas del vehículo.</p></div>
                 </div>
-                <div class="sm:col-span-2 r19-gradient-border r19-glow p-6 text-center flex flex-col items-center justify-between">
-                    <div class="w-16 h-16 rounded-2xl bg-purple-950/60 flex items-center justify-center mb-3"><i class="fa-solid fa-snowflake text-4xl r19-icon-gradient"></i></div>
-                    <div>
-                        <h3 class="text-xl font-extrabold text-white mb-2">Aire Acondicionado Automotriz</h3>
-                        <p class="text-slate-300 text-xs sm:text-sm max-w-md mx-auto mb-5 leading-relaxed">Carga de gas refrigerante, detección de fugas, reparación de compresor, cambio de filtro de polen y sanitización completa.</p>
-                        <button onclick="elegirYAgendar('Aire Acondicionado Automotriz')" class="px-6 py-2 rounded-full border border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-slate-950 text-xs font-bold uppercase tracking-wider transition">Agendar Aire Acondicionado</button>
-                    </div>
+                <!-- Servicio 6 -->
+                <div onclick="elegirYAgendar('Servicios a Domicilio')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/60 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
+                    <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-house-chimney-user text-3xl r19-icon-gradient"></i></div>
+                    <div><h3 class="text-lg font-bold text-white mb-2">Servicios a Domicilio</h3><p class="text-slate-400 text-xs leading-relaxed">Atención y asistencia técnica especializada directamente en su hogar.</p></div>
+                </div>
+                <!-- Servicio 7 -->
+                <div onclick="elegirYAgendar('Distribución y Embrague')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/60 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
+                    <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-gears text-3xl r19-icon-gradient"></i></div>
+                    <div><h3 class="text-lg font-bold text-white mb-2">Distribución y Embrague</h3><p class="text-slate-400 text-xs leading-relaxed">Cambio de kit de distribución, correas, cadenas y embragues completos.</p></div>
+                </div>
+                <!-- Servicio 8 Destacado Aire Acondicionado -->
+                <div onclick="elegirYAgendar('Aire Acondicionado Automotriz')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/60 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
+                    <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-snowflake text-3xl r19-icon-gradient"></i></div>
+                    <div><h3 class="text-lg font-bold text-white mb-2">Aire Acondicionado</h3><p class="text-slate-400 text-xs leading-relaxed">Carga de gas, detección de fugas y sanitización del sistema de climatización.</p></div>
                 </div>
             </div>
         </div>
@@ -154,12 +179,14 @@
                             <div>
                                 <label class="block text-xs text-slate-300 mb-1">Servicio a Realizar *</label>
                                 <select id="servicioSelect" class="w-full bg-[#0b0b10] border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400">
-                                    <option value="Mantenciones">Mantenciones</option>
+                                    <option value="Mantenimiento Preventivo y Correctivo">Mantenimiento Preventivo y Correctivo</option>
+                                    <option value="Suspensión Delantera y Trasera">Suspensión Delantera y Trasera</option>
+                                    <option value="Frenos">Frenos</option>
+                                    <option value="Scanner y Diagnóstico">Scanner y Diagnóstico</option>
+                                    <option value="Inspección Pre-compra e Inspecciones Generales">Inspección Pre-compra / Inspecciones Generales</option>
+                                    <option value="Servicios a Domicilio">Servicios a Domicilio</option>
+                                    <option value="Distribución y Embrague">Distribución y Embrague</option>
                                     <option value="Aire Acondicionado Automotriz">Aire Acondicionado Automotriz</option>
-                                    <option value="Culata">Culata</option>
-                                    <option value="Embrague">Embrague</option>
-                                    <option value="Distribución">Distribución</option>
-                                    <option value="Scanner Automotriz">Scanner Automotriz</option>
                                     <option value="Regeneración DPF">Regeneración DPF</option>
                                 </select>
                             </div>
