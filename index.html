@@ -195,7 +195,7 @@
         </div>
     </section>
 
-    <!-- Nueva Sección de Galería / Trabajos del Taller -->
+    <!-- Sección de Trabajos en el Taller (Actualizada con Tarjetas Gráficas Estilizadas 100% Seguras) -->
     <section id="galeria" class="py-20 bg-[#101018] border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -203,24 +203,33 @@
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Nuestra labor en el taller</h2>
                 <p class="text-slate-400 text-sm mt-2">Trabajos especializados con herramientas de precisión y total pulcritud.</p>
             </div>
+            
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                <div class="rounded-2xl overflow-hidden border border-white/10 relative group">
-                    <img src="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=800&q=80" alt="Scanner Automotriz" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
-                        <span class="text-white text-sm font-bold"><i class="fa-solid fa-laptop-code text-amber-400 mr-2"></i>Scanner y Diagnóstico Electrónico</span>
+                <!-- Tarjeta 1: Scanner -->
+                <div class="bg-[#14141d] border border-white/10 hover:border-purple-500/50 rounded-3xl p-8 flex flex-col items-center text-center transition duration-300 group shadow-xl">
+                    <div class="w-20 h-20 rounded-2xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-laptop-code text-4xl r19-icon-gradient"></i>
                     </div>
+                    <h3 class="text-white font-bold text-lg mb-2">Scanner y Diagnóstico</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Lectura precisa de códigos de error, sensores y centralitas electrónicas multimarcas.</p>
                 </div>
-                <div class="rounded-2xl overflow-hidden border border-white/10 relative group">
-                    <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80" alt="Mantención y Frenos" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
-                        <span class="text-white text-sm font-bold"><i class="fa-solid fa-circle-dot text-amber-400 mr-2"></i>Cambio de Pastillas y Discos</span>
+
+                <!-- Tarjeta 2: Frenos y Mantención -->
+                <div class="bg-[#14141d] border border-white/10 hover:border-amber-400/50 rounded-3xl p-8 flex flex-col items-center text-center transition duration-300 group shadow-xl">
+                    <div class="w-20 h-20 rounded-2xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-circle-dot text-4xl text-amber-400"></i>
                     </div>
+                    <h3 class="text-white font-bold text-lg mb-2">Frenos y Seguridad</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Cambio profesional de pastillas, rectificado de discos y revisión del sistema hidráulico.</p>
                 </div>
-                <div class="rounded-2xl overflow-hidden border border-white/10 relative group">
-                    <img src="https://images.unsplash.com/photo-1517524208802-b8943750fa9a?auto=format&fit=crop&w=800&q=80" alt="Suspensión" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-4">
-                        <span class="text-white text-sm font-bold"><i class="fa-solid fa-gears text-amber-400 mr-2"></i>Reparación de Suspensión</span>
+
+                <!-- Tarjeta 3: Suspensión y Mecánica General -->
+                <div class="bg-[#14141d] border border-white/10 hover:border-emerald-500/50 rounded-3xl p-8 flex flex-col items-center text-center transition duration-300 group shadow-xl">
+                    <div class="w-20 h-20 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-gears text-4xl text-emerald-400"></i>
                     </div>
+                    <h3 class="text-white font-bold text-lg mb-2">Suspensión y Tren Delantero</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">Reemplazo de bandejas, amortiguadores y solución a ruidos o desgaste irregular.</p>
                 </div>
             </div>
         </div>
@@ -562,7 +571,6 @@
 
             urlWhatsAppTemporal = `https://wa.me/${WHATSAPP_TALLER}?text=${msg}`;
             
-            // Mostrar modal de éxito visual
             document.getElementById('modalExito').classList.remove('hidden');
 
             this.reset();
