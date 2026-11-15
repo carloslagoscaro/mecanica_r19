@@ -14,9 +14,18 @@
         .r19-glow { box-shadow: 0 0 25px rgba(126, 34, 206, 0.35), 0 0 15px rgba(244, 63, 94, 0.25); }
         .r19-btn-gradient { background: linear-gradient(90deg, #f59e0b 0%, #ec4899 50%, #7e22ce 100%); }
         .r19-icon-gradient { background: linear-gradient(135deg, #fbbf24 0%, #f43f5e 50%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        @keyframes pulse-soft { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .whatsapp-float { animation: pulse-soft 2s infinite; }
     </style>
 </head>
 <body class="antialiased selection:bg-purple-600 selection:text-white overflow-x-hidden">
+
+    <!-- Botón Flotante de WhatsApp Permanente para Móviles -->
+    <a href="https://wa.me/56932291414?text=Hola,%20tengo%20una%20consulta%20mecánica%20desde%20la%20web." target="_blank" 
+       class="whatsapp-float fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20ba5a] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition text-2xl" 
+       title="Chatea con nosotros">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <!-- Navbar Responsivo -->
     <header class="fixed w-full top-0 z-50 bg-[#0b0b10]/95 backdrop-blur-md border-b border-white/15">
@@ -31,25 +40,27 @@
                     <a href="#servicios" class="px-3 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition">Servicios</a>
                     <a href="#agenda" class="px-3 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition">Agendar</a>
                     <a href="#ubicacion" class="px-3 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition">Ubicación</a>
-                    <a href="#testimonios" class="px-3 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition">Opiniones</a>
+                    <a href="#faq" class="px-3 py-1.5 rounded-full text-slate-300 hover:text-white hover:bg-white/5 transition">FAQ</a>
                 </nav>
                 <a href="#agenda" class="r19-btn-gradient text-white text-xs sm:text-sm font-bold px-4 sm:px-5 py-2.5 rounded-full shadow-lg hover:opacity-90 transition">Agendar Hora</a>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section (Fondo mecánico optimizado con mayor presencia visual) -->
+    <!-- Hero Section -->
     <section id="inicio" class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 min-h-[85vh] flex items-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <!-- Imagen con opacidad ligeramente mayor para lucir el taller -->
             <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1920&q=80" alt="Taller Mecánico R19" class="w-full h-full object-cover object-center opacity-45">
-            <!-- Gradiente lateral inteligente: oscuro a la izquierda para el texto, transparente a la derecha para mostrar la imagen -->
             <div class="absolute inset-0 bg-gradient-to-r from-[#0b0b10] via-[#0b0b10]/80 to-transparent"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-[#0b0b10] via-transparent to-[#0b0b10]/50"></div>
         </div>
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="max-w-2xl text-center sm:text-left">
-                <p class="text-amber-400 font-bold tracking-widest text-xs sm:text-sm uppercase mb-3">R19 MECÁNICA AUTOMOTRIZ</p>
+                <!-- Sello de Garantía de Alta Gama -->
+                <div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/30 px-3 py-1.5 rounded-full mb-4">
+                    <i class="fa-solid fa-shield-check text-amber-400 text-xs"></i>
+                    <span class="text-amber-400 text-xs font-bold uppercase tracking-wider">Garantía 100% Transparente</span>
+                </div>
                 <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5">Su Socio de Confianza en Mecánica de Excelencia.</h1>
                 <p class="text-slate-200 text-sm sm:text-lg mb-8 leading-relaxed font-medium">Reserva tu hora en línea de forma rápida y segura. Mantenciones, diagnóstico por scanner, DPF y aire acondicionado automotriz.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
@@ -60,8 +71,23 @@
         </div>
     </section>
 
+    <!-- Franja Multimarcas (Toque Pro) -->
+    <div class="bg-[#0e0e14] border-y border-white/10 py-6">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-4">Especialistas en Servicio Multimarcas</p>
+            <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-12 text-slate-300 text-sm sm:text-base font-bold opacity-75">
+                <span><i class="fa-solid fa-car text-amber-400 mr-2"></i>CHEVROLET</span>
+                <span><i class="fa-solid fa-car text-amber-400 mr-2"></i>HYUNDAI</span>
+                <span><i class="fa-solid fa-car text-amber-400 mr-2"></i>KIA</span>
+                <span><i class="fa-solid fa-car text-amber-400 mr-2"></i>TOYOTA</span>
+                <span><i class="fa-solid fa-car text-amber-400 mr-2"></i>NISSAN</span>
+                <span><i class="fa-solid fa-car text-amber-400 mr-2"></i>FORD Y MÁS</span>
+            </div>
+        </div>
+    </div>
+
     <!-- Sección Leyenda del Mecánico / Sobre Nosotros -->
-    <section id="nosotros" class="py-16 bg-[#101018] border-y border-white/10">
+    <section id="nosotros" class="py-16 bg-[#101018] border-b border-white/10">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Nuestra Filosofía de Trabajo</span>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 mb-6">Compromiso, Cercanía y 100% Transparencia</h2>
@@ -85,42 +111,42 @@
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Servicio 1 -->
-                <div onclick="elegirYAgendar('Mantenimiento Preventivo y Correctivo')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/60 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
+                <div onclick="elegirYAgendar('Mantenimiento Preventivo y Correctivo')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/65 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
                     <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-oil-can text-3xl r19-icon-gradient"></i></div>
                     <div><h3 class="text-lg font-bold text-white mb-2">Mantenciones / Preventivo</h3><p class="text-slate-400 text-xs leading-relaxed">Mantenimiento preventivo y correctivo, cambio de aceite, filtros y pautas por kilometraje.</p></div>
                 </div>
                 <!-- Servicio 2 -->
-                <div onclick="elegirYAgendar('Suspensión Delantera y Trasera')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/60 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
+                <div onclick="elegirYAgendar('Suspensión Delantera y Trasera')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/65 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
                     <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-car-burst text-3xl r19-icon-gradient"></i></div>
                     <div><h3 class="text-lg font-bold text-white mb-2">Suspensión</h3><p class="text-slate-400 text-xs leading-relaxed">Reparación y revisión completa de suspensión delantera y trasera.</p></div>
                 </div>
                 <!-- Servicio 3 -->
-                <div onclick="elegirYAgendar('Frenos')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/60 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
+                <div onclick="elegirYAgendar('Frenos')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/65 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
                     <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-circle-dot text-3xl r19-icon-gradient"></i></div>
                     <div><h3 class="text-lg font-bold text-white mb-2">Frenos</h3><p class="text-slate-400 text-xs leading-relaxed">Cambio de pastillas, discos, líquido de frenos y revisión de seguridad.</p></div>
                 </div>
                 <!-- Servicio 4 -->
-                <div onclick="elegirYAgendar('Scanner y Diagnóstico')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/60 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
+                <div onclick="elegirYAgendar('Scanner y Diagnóstico')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/65 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
                     <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-laptop-medical text-3xl r19-icon-gradient"></i></div>
                     <div><h3 class="text-lg font-bold text-white mb-2">Scanner y Diagnóstico</h3><p class="text-slate-400 text-xs leading-relaxed">Diagnóstico electrónico multimarcas avanzado para detección precisa de fallas.</p></div>
                 </div>
                 <!-- Servicio 5 -->
-                <div onclick="elegirYAgendar('Inspección Pre-compra e Inspecciones Generales')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/60 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
+                <div onclick="elegirYAgendar('Inspección Pre-compra e Inspecciones Generales')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/65 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
                     <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-clipboard-check text-3xl r19-icon-gradient"></i></div>
                     <div><h3 class="text-lg font-bold text-white mb-2">Inspección Pre-compra</h3><p class="text-slate-400 text-xs leading-relaxed">Inspección pre-compra e inspecciones generales detalladas del vehículo.</p></div>
                 </div>
                 <!-- Servicio 6 -->
-                <div onclick="elegirYAgendar('Servicios a Domicilio')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/60 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
+                <div onclick="elegirYAgendar('Servicios a Domicilio')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/65 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
                     <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-house-chimney-user text-3xl r19-icon-gradient"></i></div>
                     <div><h3 class="text-lg font-bold text-white mb-2">Servicios a Domicilio</h3><p class="text-slate-400 text-xs leading-relaxed">Atención y asistencia técnica especializada directamente en su hogar.</p></div>
                 </div>
                 <!-- Servicio 7 -->
-                <div onclick="elegirYAgendar('Distribución y Embrague')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/60 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
+                <div onclick="elegirYAgendar('Distribución y Embrague')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/65 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
                     <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-gears text-3xl r19-icon-gradient"></i></div>
                     <div><h3 class="text-lg font-bold text-white mb-2">Distribución y Embrague</h3><p class="text-slate-400 text-xs leading-relaxed">Cambio de kit de distribución, correas, cadenas y embragues completos.</p></div>
                 </div>
                 <!-- Servicio 8 Destacado Aire Acondicionado -->
-                <div onclick="elegirYAgendar('Aire Acondicionado Automotriz')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/60 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
+                <div onclick="elegirYAgendar('Aire Acondicionado Automotriz')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/65 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
                     <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-snowflake text-3xl r19-icon-gradient"></i></div>
                     <div><h3 class="text-lg font-bold text-white mb-2">Aire Acondicionado</h3><p class="text-slate-400 text-xs leading-relaxed">Carga de gas, detección de fugas y sanitización del sistema de climatización.</p></div>
                 </div>
@@ -277,8 +303,33 @@
         </div>
     </section>
 
+    <!-- Sección de Preguntas Frecuentes (FAQ - Toque Profesional) -->
+    <section id="faq" class="py-20 bg-[#101018] border-t border-white/10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Resolvemos tus Dudas</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Preguntas Frecuentes</h2>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="bg-[#14141d] border border-white/10 rounded-2xl p-6">
+                    <h3 class="text-white font-bold text-base mb-2"><i class="fa-solid fa-circle-question text-amber-400 mr-2"></i>¿Cómo funciona el agendamiento online?</h3>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">Eliges el servicio, seleccionas una fecha disponible y un bloque horario. Al confirmar, la web genera automáticamente un mensaje con todos tus datos directo al WhatsApp del taller para asegurar tu cupo.</p>
+                </div>
+                <div class="bg-[#14141d] border border-white/10 rounded-2xl p-6">
+                    <h3 class="text-white font-bold text-base mb-2"><i class="fa-solid fa-circle-question text-amber-400 mr-2"></i>¿Atienden servicios a domicilio en Santiago?</h3>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">Sí, contamos con asistencia y servicios especializados a domicilio previa coordinación y evaluación del requerimiento técnico.</p>
+                </div>
+                <div class="bg-[#14141d] border border-white/10 rounded-2xl p-6">
+                    <h3 class="text-white font-bold text-base mb-2"><i class="fa-solid fa-circle-question text-amber-400 mr-2"></i>¿El diagnóstico por scanner es compatible con todas las marcas?</h3>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">Así es, trabajamos con equipos de última generación para diagnóstico electrónico multimarcas (lectura y borrado de códigos de falla, sensores, ABS y más).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Sección de Opiniones y Reseñas Reales (Integración Google Maps) -->
-    <section id="testimonios" class="py-20 bg-[#101018] border-t border-white/10">
+    <section id="testimonios" class="py-20 bg-[#0b0b10] border-t border-white/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center mb-12 gap-6 text-center md:text-left">
                 <div>
@@ -337,7 +388,7 @@
         </div>
     </section>
 
-    <!-- Footer Optimizado (Sin duplicidad) -->
+    <!-- Footer Optimizado -->
     <footer class="bg-[#08080c] border-t border-white/10 py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-8 text-center md:text-left">
@@ -562,6 +613,8 @@
                 tbody.innerHTML = `<tr><td colspan="6" class="py-8 text-center text-slate-500">No hay horas agendadas para mostrar.</td></tr>`;
                 return;
             }
+
+            reservasLocal.sort((a, b) => (a.fecha + a.hora).localeCompare(b.fecha + b.hora));
 
             reservasLocal.forEach(r => {
                 const tr = document.createElement('tr');
