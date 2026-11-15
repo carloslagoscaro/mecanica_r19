@@ -125,10 +125,6 @@
                                     <span class="flex items-center gap-1 text-rose-400"><span class="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"></span> Ocupado</span>
                                 </div>
                             </div>
-                            <div id="loadingHorarios" class="hidden text-center py-6 text-slate-400 text-xs">
-                                <i class="fa-solid fa-circle-notch fa-spin text-amber-400 text-lg mb-2"></i>
-                                <p>Consultando agenda...</p>
-                            </div>
                             <div id="gridHorarios" class="grid grid-cols-2 sm:grid-cols-3 gap-3"></div>
                             <input type="hidden" id="horaSeleccionada" required>
                         </div>
@@ -137,7 +133,6 @@
                     <div class="lg:col-span-6 border-t lg:border-t-0 lg:border-l border-white/10 pt-6 lg:pt-0 lg:pl-8">
                         <label class="block text-xs font-bold text-amber-400 uppercase tracking-wider mb-4">3. Datos del Cliente y Vehículo</label>
                         
-                        <!-- Formulario oculto conectado por iframe para evitar errores CORS -->
                         <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
                         
                         <form id="formReserva" target="hidden_iframe" method="POST" class="space-y-4">
@@ -172,7 +167,6 @@
                                 <textarea name="detalle" id="clienteDetalle" rows="2" placeholder="Síntomas o detalles adicionales..." class="w-full bg-[#0b0b10] border border-white/15 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-amber-400"></textarea>
                             </div>
                             
-                            <!-- Campos ocultos necesarios para la fecha y hora -->
                             <input type="hidden" name="fecha" id="inputFechaHidden">
                             <input type="hidden" name="hora" id="inputHoraHidden">
 
@@ -305,20 +299,12 @@
         });
 
         async function cargarReservas() {
-            const loader = document.getElementById('loadingHorarios');
-            const grid = document.getElementById('gridHorarios');
-            
-            loader.classList.remove('hidden');
-            grid.classList.add('hidden');
-
             try {
                 const res = await fetch(GOOGLE_SCRIPT_URL);
                 reservasGlobales = await res.json();
             } catch (error) {
                 console.error("Error leyendo Google Sheets:", error);
             } finally {
-                loader.classList.add('hidden');
-                grid.classList.remove('hidden');
                 renderizarHorarios();
                 renderizarTablaMecanico();
             }
@@ -376,7 +362,6 @@
             document.getElementById('agenda').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Envío seguro a Google Sheets mediante Formulario e Iframe (sin errores CORS)
         document.getElementById('formReserva').addEventListener('submit', function(e) {
             const hora = document.getElementById('horaSeleccionada').value;
             if (!hora) {
@@ -406,15 +391,17 @@
                 msg += `*Servicio:* ${servicio}%0A`;
                 if (detalle) msg += `*Detalle:* ${detalle}%0A`;
 
-                alert("¡Reserva guardada en la planilla del taller! Se abrirá WhatsApp para enviar tu comprobante.");
+                alert("¡Reserva guardada con éxito en la planilla del taller! Se abrirá WhatsApp para enviar tu comprobante.");
                 window.open(`https://wa.me/${WHATSAPP_TALLER}?text=${msg}`, '_blank');
 
                 form.reset();
                 document.getElementById('horaSeleccionada').value = "";
                 document.getElementById('resumenSeleccion').classList.add('hidden');
                 inputFecha.value = hoyISO;
+                
+                // Recargar planilla e interfaz tras 2 segundos para marcar la hora en rojo
                 setTimeout(cargarReservas, 2000);
-            }, 800);
+            }, 600);
         });
 
         function abrirPanelMecanico() {
