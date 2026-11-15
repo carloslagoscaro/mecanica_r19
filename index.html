@@ -3,9 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>R19 Mecánica Automotriz | Agenda y Servicios</title>
+    <title>R19 Mecánica Automotriz en Renca | Scanner, Mantenciones y Frenos</title>
+    <meta name="description" content="Taller mecánico multimarcas 100% transparente en Renca, Santiago. Especialistas en mantenimiento preventivo, scanner automotriz, suspensión, frenos y aire acondicionado. ¡Agenda tu hora online!">
+    <meta name="keywords" content="taller mecanico renca, mecanica automotriz santiago, scanner automotriz, mantencion vehiculo, frenos, suspension, aire acondicionado automotriz, r19 mecanica">
+    <meta name="author" content="R19 Mecánica Automotriz">
+    
+    <!-- Scripts y Estilos -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Datos Estructurados Schema.org para SEO Local (Google) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoRepair",
+      "name": "R19 Mecánica Automotriz",
+      "image": "logo.jfif",
+      "@id": "",
+      "url": "",
+      "telephone": "+56932291414",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Los Crisantemos 2127",
+        "addressLocality": "Renca",
+        "addressRegion": "Santiago",
+        "addressCountry": "CL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -33.4072,
+        "longitude": -70.7185
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "09:00",
+        "closes": "19:00"
+      },
+      "priceRange": "$$"
+    }
+    </script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
         body { font-family: 'Montserrat', sans-serif; background-color: #0b0b10; color: #ffffff; }
@@ -16,7 +61,6 @@
         .r19-icon-gradient { background: linear-gradient(135deg, #fbbf24 0%, #f43f5e 50%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         @keyframes pulse-soft { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
         .whatsapp-float { animation: pulse-soft 2s infinite; }
-        /* Ocultar flechas por defecto del input date para estilizarlo mejor en algunos navegadores */
         input[type="date"]::-webkit-calendar-picker-indicator {
             filter: invert(1);
             cursor: pointer;
@@ -28,7 +72,7 @@
     <!-- Botón Flotante de WhatsApp Permanente para Móviles -->
     <a href="https://wa.me/56932291414?text=Hola,%20tengo%20una%20consulta%20mecánica%20desde%20la%20web." target="_blank" 
        class="whatsapp-float fixed bottom-6 right-6 z-50 bg-[#25D366] hover:bg-[#20ba5a] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition text-2xl" 
-       title="Chatea con nosotros">
+       title="Chatea con nosotros en WhatsApp">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
@@ -37,7 +81,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <a href="#inicio" class="flex items-center gap-3 group">
-                    <img src="logo.jfif" alt="R19 Mecánica Automotriz" class="h-12 sm:h-14 w-auto object-contain rounded-lg transition transform group-hover:scale-105">
+                    <img src="logo.jfif" alt="Logo R19 Mecánica Automotriz Renca" class="h-12 sm:h-14 w-auto object-contain rounded-lg transition transform group-hover:scale-105">
                 </a>
                 <nav class="hidden md:flex items-center space-x-1 lg:space-x-2 text-xs lg:text-sm font-medium">
                     <a href="#inicio" class="px-3 py-1.5 rounded-full border border-purple-500 bg-purple-500/10 text-white transition">Inicio</a>
@@ -55,19 +99,18 @@
     <!-- Hero Section -->
     <section id="inicio" class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 min-h-[85vh] flex items-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1920&q=80" alt="Taller Mecánico R19" class="w-full h-full object-cover object-center opacity-45">
+            <img src="https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=1920&q=80" alt="Taller Mecánico en Renca R19" class="w-full h-full object-cover object-center opacity-45">
             <div class="absolute inset-0 bg-gradient-to-r from-[#0b0b10] via-[#0b0b10]/80 to-transparent"></div>
             <div class="absolute inset-0 bg-gradient-to-t from-[#0b0b10] via-transparent to-[#0b0b10]/50"></div>
         </div>
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div class="max-w-2xl text-center sm:text-left">
-                <!-- Sello de Garantía de Alta Gama -->
                 <div class="inline-flex items-center gap-2 bg-amber-400/10 border border-amber-400/30 px-3 py-1.5 rounded-full mb-4">
                     <i class="fa-solid fa-shield-check text-amber-400 text-xs"></i>
                     <span class="text-amber-400 text-xs font-bold uppercase tracking-wider">Garantía 100% Transparente</span>
                 </div>
-                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5">Su Socio de Confianza en Mecánica de Excelencia.</h1>
-                <p class="text-slate-200 text-sm sm:text-lg mb-8 leading-relaxed font-medium">Reserva tu hora en línea de forma rápida y segura. Mantenciones, diagnóstico por scanner, DPF y aire acondicionado automotriz.</p>
+                <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5">Taller Mecánico en Renca y Santiago de Confianza.</h1>
+                <p class="text-slate-200 text-sm sm:text-lg mb-8 leading-relaxed font-medium">Reserva tu hora en línea de forma rápida y segura. Mantenciones, diagnóstico por scanner multimarcas, DPF y aire acondicionado.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center sm:justify-start">
                     <a href="#agenda" class="px-7 py-3.5 rounded-full border-2 border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-slate-950 font-bold text-sm tracking-wide transition duration-300 text-center">Agendar Cita</a>
                     <a href="#servicios" class="px-7 py-3.5 rounded-full bg-white/15 hover:bg-white/20 text-white font-semibold text-sm tracking-wide transition backdrop-blur-sm text-center">Nuestros Servicios</a>
@@ -76,10 +119,10 @@
         </div>
     </section>
 
-    <!-- Franja Multimarcas (Toque Pro) -->
+    <!-- Franja Multimarcas -->
     <div class="bg-[#0e0e14] border-y border-white/10 py-6">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-4">Especialistas en Servicio Multimarcas</p>
+            <p class="text-xs text-slate-400 font-semibold uppercase tracking-widest mb-4">Especialistas en Servicio Multimarcas en Santiago</p>
             <div class="flex flex-wrap justify-center items-center gap-6 sm:gap-12 text-slate-300 text-sm sm:text-base font-bold opacity-75">
                 <span><i class="fa-solid fa-car text-amber-400 mr-2"></i>CHEVROLET</span>
                 <span><i class="fa-solid fa-car text-amber-400 mr-2"></i>HYUNDAI</span>
@@ -95,7 +138,7 @@
     <section id="nosotros" class="py-16 bg-[#101018] border-b border-white/10">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Nuestra Filosofía de Trabajo</span>
-            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 mb-6">Compromiso, Cercanía y 100% Transparencia</h2>
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1 mb-6">Compromiso, Cercanía y 100% Transparencia en Renca</h2>
             <div class="r19-gradient-border p-6 sm:p-10 text-left relative overflow-hidden">
                 <div class="absolute -right-10 -bottom-10 text-white/5 text-9xl pointer-events-none hidden sm:block">
                     <i class="fa-solid fa-shield-halved"></i>
@@ -111,7 +154,7 @@
     <section id="servicios" class="py-20 bg-[#0b0b10]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-12 text-center sm:text-left">
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Nuestros Servicios</h2>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Nuestros Servicios Mecánicos</h2>
                 <p class="text-slate-400 text-sm sm:text-base mt-2">Selecciona el servicio que necesitas para agendar directamente tu bloque de atención.</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -150,7 +193,7 @@
                     <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-gears text-3xl r19-icon-gradient"></i></div>
                     <div><h3 class="text-lg font-bold text-white mb-2">Distribución y Embrague</h3><p class="text-slate-400 text-xs leading-relaxed">Cambio de kit de distribución, correas, cadenas y embragues completos.</p></div>
                 </div>
-                <!-- Servicio 8 Destacado Aire Acondicionado -->
+                <!-- Servicio 8 -->
                 <div onclick="elegirYAgendar('Aire Acondicionado Automotriz')" class="cursor-pointer bg-[#14141d] border border-white/10 hover:border-purple-500/65 rounded-2xl p-6 text-center transition duration-300 flex flex-col items-center justify-between group">
                     <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-4 group-hover:scale-110 transition"><i class="fa-solid fa-snowflake text-3xl r19-icon-gradient"></i></div>
                     <div><h3 class="text-lg font-bold text-white mb-2">Aire Acondicionado</h3><p class="text-slate-400 text-xs leading-relaxed">Carga de gas, detección de fugas y sanitización del sistema de climatización.</p></div>
@@ -159,7 +202,7 @@
         </div>
     </section>
 
-    <!-- Sistema de Agendamiento Online Responsivo (Con Calendario Mejorado y Horario hasta las 19:00) -->
+    <!-- Sistema de Agendamiento Online Responsivo -->
     <section id="agenda" class="py-20 bg-[#101018] border-t border-white/10">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10">
@@ -174,7 +217,6 @@
                     <div class="lg:col-span-6 space-y-6">
                         <div>
                             <label class="block text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">1. Selecciona la Fecha</label>
-                            <!-- Contenedor con ícono visual de calendario para mejor UX -->
                             <div class="relative flex items-center">
                                 <span class="absolute left-4 text-amber-400 pointer-events-none"><i class="fa-solid fa-calendar-days text-base"></i></span>
                                 <input type="date" id="fechaAgenda" class="w-full bg-[#0b0b10] border border-white/20 rounded-xl pl-11 pr-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400 cursor-pointer">
@@ -253,7 +295,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">¿Dónde nos encontramos?</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Visítanos en el Taller</h2>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Visítanos en el Taller en Renca</h2>
                 <p class="text-slate-400 text-sm mt-2">Ven a conocernos o abre tu aplicación de navegación preferida para llegar sin problemas.</p>
             </div>
 
@@ -317,7 +359,7 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Resolvemos tus Dudas</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Preguntas Frecuentes</h2>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Preguntas Frecuentes sobre nuestros servicios en Renca</h2>
             </div>
             
             <div class="space-y-4">
@@ -406,7 +448,7 @@
                     <p class="text-xs text-slate-400">Servicio multimarcas profesional, transparente y de confianza en Renca.</p>
                 </div>
                 <div class="flex flex-col items-center justify-center">
-                    <img src="logo.jfif" alt="R19 Mecánica Automotriz" class="h-20 w-auto object-contain rounded-xl mb-3">
+                    <img src="logo.jfif" alt="Logo R19 Mecánica" class="h-20 w-auto object-contain rounded-xl mb-3">
                     <a href="#ubicacion" class="text-xs text-amber-400 hover:underline flex items-center gap-1.5 font-medium">
                         <i class="fa-solid fa-location-dot"></i> Ver ubicación en el mapa
                     </a>
@@ -473,7 +515,6 @@
     <script>
         const WHATSAPP_TALLER = "56932291414";
         const CLAVE_MECANICO = "R19admin";
-        // Bloques horarios extendidos hasta las 19:00 hrs
         const BLOQUES_HORARIOS = ["09:00", "10:30", "12:00", "14:30", "16:00", "17:30", "18:30"];
 
         const inputFecha = document.getElementById('fechaAgenda');
