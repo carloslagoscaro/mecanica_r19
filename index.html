@@ -16,6 +16,11 @@
         .r19-icon-gradient { background: linear-gradient(135deg, #fbbf24 0%, #f43f5e 50%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         @keyframes pulse-soft { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
         .whatsapp-float { animation: pulse-soft 2s infinite; }
+        /* Ocultar flechas por defecto del input date para estilizarlo mejor en algunos navegadores */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+            cursor: pointer;
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-purple-600 selection:text-white overflow-x-hidden">
@@ -154,7 +159,7 @@
         </div>
     </section>
 
-    <!-- Sistema de Agendamiento Online Responsivo -->
+    <!-- Sistema de Agendamiento Online Responsivo (Con Calendario Mejorado y Horario hasta las 19:00) -->
     <section id="agenda" class="py-20 bg-[#101018] border-t border-white/10">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10">
@@ -169,11 +174,15 @@
                     <div class="lg:col-span-6 space-y-6">
                         <div>
                             <label class="block text-xs font-bold text-amber-400 uppercase tracking-wider mb-2">1. Selecciona la Fecha</label>
-                            <input type="date" id="fechaAgenda" class="w-full bg-[#0b0b10] border border-white/20 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400">
+                            <!-- Contenedor con ícono visual de calendario para mejor UX -->
+                            <div class="relative flex items-center">
+                                <span class="absolute left-4 text-amber-400 pointer-events-none"><i class="fa-solid fa-calendar-days text-base"></i></span>
+                                <input type="date" id="fechaAgenda" class="w-full bg-[#0b0b10] border border-white/20 rounded-xl pl-11 pr-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400 cursor-pointer">
+                            </div>
                         </div>
                         <div>
                             <div class="flex justify-between items-center mb-3">
-                                <label class="block text-xs font-bold text-amber-400 uppercase tracking-wider">2. Bloques Horarios</label>
+                                <label class="block text-xs font-bold text-amber-400 uppercase tracking-wider">2. Bloques Horarios (Hasta las 19:00 hrs)</label>
                                 <span class="text-[11px] text-emerald-400 flex items-center gap-1">
                                     <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span> Disponibles
                                 </span>
@@ -268,7 +277,7 @@
                             </div>
                             <div>
                                 <h3 class="text-white font-bold text-base">Horarios de Atención</h3>
-                                <p class="text-slate-300 text-sm mt-1">Lunes a Viernes / Sábados previa agenda.</p>
+                                <p class="text-slate-300 text-sm mt-1">Lunes a Viernes / Sábados previa agenda (Hasta las 19:00 hrs).</p>
                             </div>
                         </div>
 
@@ -303,7 +312,7 @@
         </div>
     </section>
 
-    <!-- Sección de Preguntas Frecuentes (FAQ - Toque Profesional) -->
+    <!-- Sección de Preguntas Frecuentes (FAQ) -->
     <section id="faq" class="py-20 bg-[#101018] border-t border-white/10">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -464,7 +473,8 @@
     <script>
         const WHATSAPP_TALLER = "56932291414";
         const CLAVE_MECANICO = "R19admin";
-        const BLOQUES_HORARIOS = ["09:00", "10:30", "12:00", "14:30", "16:00", "17:30"];
+        // Bloques horarios extendidos hasta las 19:00 hrs
+        const BLOQUES_HORARIOS = ["09:00", "10:30", "12:00", "14:30", "16:00", "17:30", "18:30"];
 
         const inputFecha = document.getElementById('fechaAgenda');
         const hoyISO = new Date().toISOString().split('T')[0];
@@ -613,8 +623,6 @@
                 tbody.innerHTML = `<tr><td colspan="6" class="py-8 text-center text-slate-500">No hay horas agendadas para mostrar.</td></tr>`;
                 return;
             }
-
-            reservasLocal.sort((a, b) => (a.fecha + a.hora).localeCompare(b.fecha + b.hora));
 
             reservasLocal.forEach(r => {
                 const tr = document.createElement('tr');
