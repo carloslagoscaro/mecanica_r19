@@ -47,9 +47,9 @@
             <div class="max-w-2xl">
                 <p class="text-amber-400 font-bold tracking-widest text-xs sm:text-sm uppercase mb-3">R19 MECÁNICA AUTOMOTRIZ</p>
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-5">Su Socio de Confianza en Mecánica de Excelencia.</h1>
-                <p class="text-slate-300 text-base sm:text-lg mb-8 leading-relaxed">Reserva tu hora en línea revisando nuestros bloques disponibles en tiempo real. Mantenciones, diagnóstico por scanner, DPF y aire acondicionado automotriz.</p>
+                <p class="text-slate-300 text-base sm:text-lg mb-8 leading-relaxed">Reserva tu hora en línea de forma rápida y segura. Mantenciones, diagnóstico por scanner, DPF y aire acondicionado automotriz.</p>
                 <div class="flex flex-wrap gap-4">
-                    <a href="#agenda" class="px-7 py-3.5 rounded-full border-2 border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-slate-950 font-bold text-sm tracking-wide transition duration-300">Ver Horarios Disponibles</a>
+                    <a href="#agenda" class="px-7 py-3.5 rounded-full border-2 border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-slate-950 font-bold text-sm tracking-wide transition duration-300">Agendar Cita</a>
                     <a href="#servicios" class="px-7 py-3.5 rounded-full bg-white/10 hover:bg-white/15 text-white font-semibold text-sm tracking-wide transition backdrop-blur-sm">Nuestros Servicios</a>
                 </div>
             </div>
@@ -100,13 +100,13 @@
         </div>
     </section>
 
-    <!-- Sistema de Agendamiento Online -->
+    <!-- Sistema de Agendamiento Online (Independiente y Rápido) -->
     <section id="agenda" class="py-20 bg-[#101018] border-t border-white/10">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-10">
-                <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Sincronizado con Google Sheets</span>
+                <span class="text-amber-400 text-xs font-bold uppercase tracking-widest">Reserva Inmediata</span>
                 <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-1">Agenda tu Hora en el Taller</h2>
-                <p class="text-slate-400 text-sm mt-2">Elige una fecha y selecciona un bloque horario disponible.</p>
+                <p class="text-slate-400 text-sm mt-2">Elige una fecha y selecciona un bloque horario disponible para enviar tu reserva directamente al taller.</p>
             </div>
 
             <div class="bg-[#14141d] border border-white/10 rounded-3xl p-6 sm:p-10 shadow-2xl">
@@ -120,10 +120,9 @@
                         <div>
                             <div class="flex justify-between items-center mb-3">
                                 <label class="block text-xs font-bold text-amber-400 uppercase tracking-wider">2. Bloques Horarios</label>
-                                <div class="flex items-center gap-3 text-[11px]">
-                                    <span class="flex items-center gap-1 text-emerald-400"><span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span> Disponible</span>
-                                    <span class="flex items-center gap-1 text-rose-400"><span class="w-2.5 h-2.5 rounded-full bg-rose-500 inline-block"></span> Ocupado</span>
-                                </div>
+                                <span class="text-[11px] text-emerald-400 flex items-center gap-1">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block"></span> Horarios Disponibles
+                                </span>
                             </div>
                             <div id="gridHorarios" class="grid grid-cols-2 sm:grid-cols-3 gap-3"></div>
                             <input type="hidden" id="horaSeleccionada" required>
@@ -170,7 +169,7 @@
                             </div>
 
                             <button type="submit" id="btnConfirmar" class="w-full r19-btn-gradient hover:opacity-95 text-white font-bold py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm uppercase tracking-wider">
-                                <i class="fa-solid fa-calendar-check"></i> Confirmar Reserva
+                                <i class="fa-brands fa-whatsapp text-xl"></i> Confirmar y Enviar Reserva por WhatsApp
                             </button>
                         </form>
                     </div>
@@ -223,7 +222,8 @@
                         <a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-pink-600 flex items-center justify-center text-white transition"><i class="fa-brands fa-instagram"></i></a>
                         <a href="#" class="w-9 h-9 rounded-full bg-white/10 hover:bg-amber-500 flex items-center justify-center text-white transition"><i class="fa-brands fa-tiktok"></i></a>
                     </div>
-                    <button onclick="abrirPanelMecanico()" class="text-xs text-slate-500 hover:text-amber-400 underline transition">
+                    <!-- Acceso al Panel del Mecánico -->
+                    <button onclick="abrirPanelMecanico()" class="text-xs text-slate-400 hover:text-amber-400 underline transition font-medium">
                         <i class="fa-solid fa-wrench mr-1"></i> Acceso Panel Mecánico
                     </button>
                 </div>
@@ -232,52 +232,53 @@
         </div>
     </footer>
 
-    <!-- Modal Panel del Mecánico -->
-    <div id="modalMecanico" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
-        <div class="bg-[#14141d] border border-white/15 rounded-2xl max-w-4xl w-full max-h-[85vh] flex flex-col shadow-2xl">
-            <div class="p-5 border-b border-white/10 flex justify-between items-center">
+    <!-- Modal Panel de Administración para el Mecánico -->
+    <div id="modalMecanico" class="fixed inset-0 z-50 hidden bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-[#14141d] border border-purple-500/30 rounded-3xl max-w-4xl w-full max-h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+            <div class="p-6 border-b border-white/10 flex justify-between items-center bg-[#101018]">
                 <div>
-                    <h3 class="text-lg font-extrabold text-white"><i class="fa-solid fa-calendar-days text-amber-400 mr-2"></i>Agenda del Taller — R19</h3>
-                    <p class="text-xs text-slate-400">Sincronizado con Google Sheets</p>
+                    <h3 class="text-lg font-extrabold text-white"><i class="fa-solid fa-screwdriver-wrench text-amber-400 mr-2"></i>Panel de Control — R19 Mecánica</h3>
+                    <p class="text-xs text-slate-400">Gestión de citas agendadas en el taller</p>
                 </div>
-                <button onclick="cerrarPanelMecanico()" class="text-slate-400 hover:text-white text-xl"><i class="fa-solid fa-xmark"></i></button>
+                <button onclick="cerrarPanelMecanico()" class="text-slate-400 hover:text-white text-xl p-2"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <div class="p-5 overflow-y-auto flex-1">
-                <div class="flex flex-wrap gap-3 mb-4 items-center justify-between">
+            
+            <div class="p-6 overflow-y-auto flex-1 space-y-4">
+                <div class="flex flex-wrap gap-3 items-center justify-between">
                     <div class="flex items-center gap-2">
-                        <label class="text-xs text-slate-300">Filtrar por fecha:</label>
-                        <input type="date" id="filtroFechaMecanico" onchange="renderizarTablaMecanico()" class="bg-[#0b0b10] border border-white/20 rounded-lg px-3 py-1.5 text-xs text-white">
+                        <label class="text-xs text-slate-300 font-semibold">Filtrar por fecha:</label>
+                        <input type="date" id="filtroFechaMecanico" onchange="renderizarTablaMecanico()" class="bg-[#0b0b10] border border-white/20 rounded-xl px-3 py-2 text-xs text-white">
                         <button onclick="document.getElementById('filtroFechaMecanico').value=''; renderizarTablaMecanico();" class="text-xs text-amber-400 hover:underline">Ver todas</button>
                     </div>
-                    <button onclick="cargarReservas()" class="bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold px-3 py-1.5 rounded-lg"><i class="fa-solid fa-rotate-right mr-1"></i> Actualizar</button>
+                    <span class="text-xs text-slate-400" id="contadorCitas">Total citas: 0</span>
                 </div>
-                <div class="overflow-x-auto">
+
+                <div class="overflow-x-auto rounded-2xl border border-white/10">
                     <table class="w-full text-left border-collapse text-xs">
                         <thead>
-                            <tr class="border-b border-white/10 text-amber-400 uppercase">
-                                <th class="py-3 px-3">Fecha</th>
-                                <th class="py-3 px-3">Hora</th>
-                                <th class="py-3 px-3">Servicio</th>
-                                <th class="py-3 px-3">Vehículo</th>
-                                <th class="py-3 px-3">Cliente</th>
-                                <th class="py-3 px-3">Contacto</th>
+                            <tr class="bg-purple-950/40 text-amber-400 uppercase tracking-wider border-b border-white/10">
+                                <th class="py-3 px-4">Fecha / Hora</th>
+                                <th class="py-3 px-4">Servicio</th>
+                                <th class="py-3 px-4">Vehículo</th>
+                                <th class="py-3 px-4">Cliente</th>
+                                <th class="py-3 px-4">Contacto</th>
+                                <th class="py-3 px-4 text-center">Acciones</th>
                             </tr>
                         </thead>
-                        <tbody id="tablaCitasMecanico" class="divide-y divide-white/5 text-slate-300"></tbody>
+                        <tbody id="tablaCitasMecanico" class="divide-y divide-white/5 text-slate-300">
+                            <!-- Dinámico -->
+                        </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Script de Gestión y Conexión con Google Sheets -->
+    <!-- Script de Gestión Local y Panel del Mecánico -->
     <script>
-        const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzq9tEOenVdEuZESIqKNA1Wa648Iul0oBvBRPdxnwYIZY6hJNFr5nnJhrh85vtiu0QBuA/exec"; 
         const WHATSAPP_TALLER = "56932291414";
         const CLAVE_MECANICO = "R19admin";
         const BLOQUES_HORARIOS = ["09:00", "10:30", "12:00", "14:30", "16:00", "17:30"];
-
-        let reservasGlobales = [];
 
         const inputFecha = document.getElementById('fechaAgenda');
         const hoyISO = new Date().toISOString().split('T')[0];
@@ -285,7 +286,7 @@
         inputFecha.value = hoyISO;
 
         window.addEventListener('DOMContentLoaded', () => {
-            cargarReservas();
+            renderizarHorarios();
         });
 
         inputFecha.addEventListener('change', () => {
@@ -294,18 +295,6 @@
             renderizarHorarios();
         });
 
-        async function cargarReservas() {
-            try {
-                const res = await fetch(GOOGLE_SCRIPT_URL);
-                reservasGlobales = await res.json();
-            } catch (error) {
-                console.error("Error leyendo Google Sheets:", error);
-            } finally {
-                renderizarHorarios();
-                renderizarTablaMecanico();
-            }
-        }
-
         function renderizarHorarios() {
             const fechaElegida = inputFecha.value;
             const grid = document.getElementById('gridHorarios');
@@ -313,7 +302,8 @@
             
             grid.innerHTML = "";
 
-            const ocupadasEseDia = reservasGlobales
+            let reservasLocal = JSON.parse(localStorage.getItem('r19_citas_pro') || '[]');
+            const ocupadasEseDia = reservasLocal
                 .filter(r => r.fecha === fechaElegida)
                 .map(r => r.hora);
 
@@ -355,7 +345,7 @@
             document.getElementById('agenda').scrollIntoView({ behavior: 'smooth' });
         }
 
-        document.getElementById('formReserva').addEventListener('submit', async function(e) {
+        document.getElementById('formReserva').addEventListener('submit', function(e) {
             e.preventDefault();
 
             const fecha = inputFecha.value;
@@ -366,61 +356,52 @@
                 return;
             }
 
-            const btn = document.getElementById('btnConfirmar');
-            btn.disabled = true;
-            btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Guardando en Planilla...`;
+            const cliente = document.getElementById('clienteNombre').value.trim();
+            const telefono = document.getElementById('clienteTelefono').value.trim();
+            const vehiculo = document.getElementById('clienteVehiculo').value.trim();
+            const servicio = document.getElementById('servicioSelect').value;
+            const detalle = document.getElementById('clienteDetalle').value.trim();
 
-            const nuevaReserva = {
-                fecha: fecha,
-                hora: hora,
-                cliente: document.getElementById('clienteNombre').value.trim(),
-                telefono: document.getElementById('clienteTelefono').value.trim(),
-                vehiculo: document.getElementById('clienteVehiculo').value.trim(),
-                servicio: document.getElementById('servicioSelect').value,
-                detalle: document.getElementById('clienteDetalle').value.trim()
-            };
-
-            try {
-                await fetch(GOOGLE_SCRIPT_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'text/plain' },
-                    body: JSON.stringify(nuevaReserva)
-                });
-
-                await new Promise(r => setTimeout(r, 2000));
-                await cargarReservas();
-
-                let msg = `Hola *R19 Mecánica Automotriz*, he agendado una hora en la web:%0A%0A`;
-                msg += `*Fecha:* ${fecha}%0A`;
-                msg += `*Hora:* ${hora} hrs%0A`;
-                msg += `*Cliente:* ${nuevaReserva.cliente}%0A`;
-                msg += `*Vehículo:* ${nuevaReserva.vehiculo}%0A`;
-                msg += `*Servicio:* ${nuevaReserva.servicio}%0A`;
-                if (nuevaReserva.detalle) msg += `*Detalle:* ${nuevaReserva.detalle}%0A`;
-
-                alert("¡Reserva guardada con éxito en la planilla y disponible en la agenda!");
-                window.open(`https://wa.me/${WHATSAPP_TALLER}?text=${msg}`, '_blank');
-
-                this.reset();
-                document.getElementById('horaSeleccionada').value = "";
-                document.getElementById('resumenSeleccion').classList.add('hidden');
-                inputFecha.value = hoyISO;
+            let reservasLocal = JSON.parse(localStorage.getItem('r19_citas_pro') || '[]');
+            
+            // Verificar si ya está ocupada
+            if (reservasLocal.some(r => r.fecha === fecha && r.hora === hora)) {
+                alert("Lo sentimos, este horario acaba de ser ocupado. Por favor elige otro.");
                 renderizarHorarios();
-
-            } catch (err) {
-                alert("Error al conectar con la planilla. Intenta de nuevo.");
-            } finally {
-                btn.disabled = false;
-                btn.innerHTML = `<i class="fa-solid fa-calendar-check"></i> Confirmar Reserva`;
+                return;
             }
+
+            // Guardar nueva cita
+            const nuevaCita = { id: Date.now(), fecha, hora, cliente, telefono, vehiculo, servicio, detalle };
+            reservasLocal.push(nuevaCita);
+            localStorage.setItem('r19_citas_pro', JSON.stringify(reservasLocal));
+
+            // Abrir WhatsApp
+            let msg = `Hola *R19 Mecánica Automotriz*, he agendado una hora en la web:%0A%0A`;
+            msg += `*Fecha:* ${fecha}%0A`;
+            msg += `*Hora:* ${hora} hrs%0A`;
+            msg += `*Cliente:* ${cliente}%0A`;
+            msg += `*Teléfono:* ${telefono}%0A`;
+            msg += `*Vehículo:* ${vehiculo}%0A`;
+            msg += `*Servicio:* ${servicio}%0A`;
+            if (detalle) msg += `*Detalle:* ${detalle}%0A`;
+
+            alert("¡Reserva registrada con éxito! Se abrirá WhatsApp para enviar tu comprobante al taller.");
+            window.open(`https://wa.me/${WHATSAPP_TALLER}?text=${msg}`, '_blank');
+
+            this.reset();
+            document.getElementById('horaSeleccionada').value = "";
+            document.getElementById('resumenSeleccion').classList.add('hidden');
+            inputFecha.value = hoyISO;
+            renderizarHorarios();
         });
 
+        // Funciones del Panel del Mecánico
         function abrirPanelMecanico() {
             const pass = prompt("Ingresa la clave de acceso del taller:");
             if (pass === CLAVE_MECANICO) {
                 document.getElementById('modalMecanico').classList.remove('hidden');
-                cargarReservas();
+                renderizarTablaMecanico();
             } else if (pass !== null) {
                 alert("Clave incorrecta.");
             }
@@ -433,37 +414,53 @@
         function renderizarTablaMecanico() {
             const tbody = document.getElementById('tablaCitasMecanico');
             const filtroFecha = document.getElementById('filtroFechaMecanico').value;
+            const contador = document.getElementById('contadorCitas');
             tbody.innerHTML = "";
 
-            let filtradas = [...reservasGlobales];
+            let reservasLocal = JSON.parse(localStorage.getItem('r19_citas_pro') || '[]');
             if (filtroFecha) {
-                filtradas = filtradas.filter(r => r.fecha === filtroFecha);
+                reservasLocal = reservasLocal.filter(r => r.fecha === filtroFecha);
             }
 
-            filtradas.sort((a, b) => (a.fecha + a.hora).localeCompare(b.fecha + b.hora));
+            reservasLocal.sort((a, b) => (a.fecha + a.hora).localeCompare(b.fecha + b.hora));
+            contador.textContent = `Total citas: ${reservasLocal.length}`;
 
-            if (filtradas.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="6" class="py-6 text-center text-slate-500">No hay horas agendadas para mostrar.</td></tr>`;
+            if (reservasLocal.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" class="py-8 text-center text-slate-500">No hay horas agendadas para mostrar.</td></tr>`;
                 return;
             }
 
-            filtradas.forEach(r => {
+            reservasLocal.forEach(r => {
                 const tr = document.createElement('tr');
-                tr.className = "hover:bg-white/5";
+                tr.className = "hover:bg-white/5 transition";
                 tr.innerHTML = `
-                    <td class="py-3 px-3 font-semibold text-white">${r.fecha}</td>
-                    <td class="py-3 px-3"><span class="bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded font-bold">${r.hora}</span></td>
-                    <td class="py-3 px-3 text-purple-300 font-semibold">${r.servicio}</td>
-                    <td class="py-3 px-3">${r.vehiculo}</td>
-                    <td class="py-3 px-3">${r.cliente}</td>
-                    <td class="py-3 px-3">
-                        <a href="https://wa.me/${r.telefono.replace(/\D/g,'')}" target="_blank" class="text-emerald-400 hover:underline">
-                            <i class="fa-brands fa-whatsapp"></i> ${r.telefono}
+                    <td class="py-3 px-4 font-semibold text-white">${r.fecha}<br><span class="text-amber-400 font-bold">${r.hora} hrs</span></td>
+                    <td class="py-3 px-4 text-purple-300 font-medium">${r.servicio}</td>
+                    <td class="py-3 px-4">${r.vehiculo}</td>
+                    <td class="py-3 px-4 font-medium text-white">${r.cliente}</td>
+                    <td class="py-3 px-4">
+                        <a href="https://wa.me/${r.telefono.replace(/\D/g,'')}" target="_blank" class="text-emerald-400 hover:underline flex items-center gap-1">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> ${r.telefono}
                         </a>
+                    </td>
+                    <td class="py-3 px-4 text-center">
+                        <button onclick="eliminarCita(${r.id})" class="bg-rose-500/20 hover:bg-rose-500 text-rose-300 hover:text-white px-3 py-1.5 rounded-lg text-xs font-semibold transition" title="Eliminar Cita">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
                     </td>
                 `;
                 tbody.appendChild(tr);
             });
+        }
+
+        function eliminarCita(id) {
+            if (confirm("¿Estás seguro de liberar y eliminar esta cita del taller?")) {
+                let reservasLocal = JSON.parse(localStorage.getItem('r19_citas_pro') || '[]');
+                reservasLocal = reservasLocal.filter(r => r.id !== id);
+                localStorage.setItem('r19_citas_pro', JSON.stringify(reservasLocal));
+                renderizarTablaMecanico();
+                renderizarHorarios();
+            }
         }
     </script>
 </body>
